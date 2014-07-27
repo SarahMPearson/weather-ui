@@ -1,11 +1,10 @@
 /* jshint camelcase:false */
 'use strict';
 
-
+var request = require('request');
 var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-var request = require('request');
 
 var app = express();
 
@@ -21,15 +20,27 @@ app.get('/', function(req, res){
 });
 
 app.post('/', function(req, res){
-  var zip = req.body.zip *1;
-  var url = 'http://api.wunderground.com/api/2690d269e6a80bec/conditions/q/' + zip '.json';
+  debugger;
+  var url = 'http://api.wunderground.com/api/2690d269e6a80bec/conditions/q/' + req.body.zip + '.json';
   request(url, function(error, response, body){
      body = JSON.parse(body);
-     var temp = body.current_observation.temp_f;
-     
-     console.log(high);
+    var temp = body.current_observation.temp_f;
+    var thermHeight = Math.floor(temp) * 2;
+    var color;
+    if(temp >= 95){
+      color = 'red';
+    }else if(temp >= 81){
+      color='orange';
+    }else if(temp >= 71){
+      color = 'yellow';
+    }else if(temp >=33) {
+      color = 'green';
+    }else if(temp > 95){
+      color = 'red';
+    }
+    console.log(temp);
+    res.render('weather', {temp:temp.toFixed(2), height:thermHeight, top:200-thermHeight, color:color});
  });
-  };res.render('weather');
 });
 
 var port = process.env.PORT;

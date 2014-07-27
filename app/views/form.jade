@@ -7,6 +7,12 @@ html
   body
     h1 WEATHER!
     form(method='post', action='/')
-      input(name='zip', type='text', placeholder='zip', autofocus=true, value='37203')
-      br
-      button Get Temp
+      table
+        tr
+          td
+            label Zip Code
+          td
+            input(name='zip', type='text', placeholder='zip', autofocus=true, value='37203')
+        tr
+          td(colspan='2')
+            button Get Temp

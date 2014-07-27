@@ -5,5 +5,10 @@ html
     title Weather UI
     link(rel='stylesheet', href='/css/style.css')
   body
-    h1 WEATHER!
-    - console.log(high);
+    .content
+      #weather
+        div
+          h1 #{temp}&deg; F
+        div
+          div(style="height:"{height}px;background-color:#{color};top:#{top}px;")
+        a(href='/', style='display:block;') Home
