@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Weather UI
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    h1 WEATHER!
+    form(method='post', action='/')
+      input(name='zip', type='text', placeholder='zip', autofocus=true)
+      br
+      button Get Temp
