@@ -1,8 +1,11 @@
+/* jshint camelcase:false */
 'use strict';
+
 
 var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var request = require('request');
 
 var app = express();
 
@@ -18,10 +21,15 @@ app.get('/', function(req, res){
 });
 
 app.post('/', function(req, res){
- 
-  
-  
-  res.render('weather');
+  var zip = req.body.zip *1;
+  var url = 'http://api.wunderground.com/api/2690d269e6a80bec/conditions/q/' + zip '.json';
+  request(url, function(error, response, body){
+     body = JSON.parse(body);
+     var temp = body.current_observation.temp_f;
+     
+     console.log(high);
+ });
+  };res.render('weather');
 });
 
 var port = process.env.PORT;
