@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
+html{
+  background: url('/img/beach-1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+button{
+  font-size: 15px;
+  font-family: 'Droid Serif', serif;
+}
+
+h1 {
+  background-color: rgba(0,0,0,.45);
+  font-family: 'Droid Serif', serif;
+  color: white;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+}
+
+#b{
+  font-family: 'Droid Serif', serif;
+  font-size: 55px;
+  text-align: center
+
+#x {
+  font-family: 'Droid Serif', serif;
+  font-size: 100px;
+  text-align: center;
+}
