@@ -20,8 +20,8 @@ app.get('/', function(req, res){
 });
 
 app.post('/', function(req, res){
-  debugger;
-  var url = 'http://api.wunderground.com/api/2690d269e6a80bec/conditions/q/' + req.body.zip + '.json';
+  var zip = req.body.zip;
+  var url = 'http://api.wunderground.com/api/2690d269e6a80bec/conditions/q/' + zip + '.json';
   request(url, function(error, response, body){
      body = JSON.parse(body);
     var temp = body.current_observation.temp_f;
@@ -40,7 +40,8 @@ app.post('/', function(req, res){
 
 
     console.log(temp);
-    res.render('weather', {temp:temp, color:color});
+    console.log(color);
+    res.render('weather', {temp:temp, color:color, zip:zip});
  });
 });
 

@@ -23,13 +23,62 @@ h1 {
   padding: 10px;
 }
 
-#b{
-  font-family: 'Droid Serif', serif;
-  font-size: 55px;
-  text-align: center
-
-#x {
-  font-family: 'Droid Serif', serif;
-  font-size: 100px;
-  text-align: center;
+.content{
+  height: 300px;
+  width: 80%;
+  margin: 0px auto;
 }
+
+#weather, #thermometer {
+  display: inline-block;
+}
+
+#weather {
+  font-size: 100px;
+  font-family: 'Droid Serif', serif;
+  padding: 0px 10% 0px 0px;
+}
+
+#thermometer{
+  position: relative;
+  height: 100%;
+  width: 70px;
+  background-color: rgba(0,0,0, .2);
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+#tempColor{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  margin-left: -1;
+  border: 1px solid black; 
+  border-radius: 20px;
+}
+
+#pos25, #pos50, #pos75{
+  position: absolute;
+  height: 0px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+#pos25{
+  bottom: 25%;
+}
+#pos50 {
+  bottom: 50%;
+}
+
+#pos75 {
+  bottom: 75%;
+}
+
+#zip {
+  text-align: center;
+  font-family: 'Droid Serif', serif;
+  font-size: 50px;
+  background-color: (0,0,0,.2);
+}
+
